@@ -1,5 +1,21 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['admin_ID'])) {
+header('Location: login.php');
+exit();
+
+}
+
+
+  
     require_once('classes/database.php');
+
+    
+  $sweetAlertConfig = "";
+
+
+
     $con = new database();
 
     $data = $con->opencon();
